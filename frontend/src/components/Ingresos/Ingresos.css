@@ -1,0 +1,29 @@
+.ingresos-container {
+    padding: 2rem;
+    background-color: #a2a19d;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #000000;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #000000;
+}
+
+table tr:hover {
+    background-color: #000000;
+}
