@@ -11,6 +11,16 @@ exports.getAllEgresos = (req, res) => {
 
 exports.createEgreso = (req, res) => {
     const { concepto, monto, fecha } = req.body;
+
+    // Validar datos
+    if (!concepto || !monto || !fecha) {
+        return res.status(400).json({ error: 'Todos los campos son obligatorios' });
+    }
+
+    if (isNaN(parseFloat(monto)) || parseFloat(monto) <= 0) {
+        return res.status(400).json({ error: 'El monto debe ser un número positivo' });
+    }
+
     db.query(
         'INSERT INTO egresos (concepto, monto, fecha) VALUES (?, ?, ?)',
         [concepto, monto, fecha],

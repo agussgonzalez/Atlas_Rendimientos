@@ -4,7 +4,7 @@ import './Clientes.css';
 
 const Clientes = () => {
     const [clientes, setClientes] = useState([]);
-    const [cuotaMensualGeneral, setCuotaMensualGeneral] = useState(0);
+    const [cuotaMensualGeneral, setCuotaMensualGeneral] = useState('');
 
     // Obtener la lista de clientes al cargar el componente
     useEffect(() => {
@@ -84,7 +84,7 @@ const Clientes = () => {
                         <tr key={cliente.id}>
                             <td>{cliente.nombre}</td>
                             <td>{cliente.telefono}</td>
-                            <td>{cliente.fecha_ingreso}</td>
+                            <td>{cliente.fecha}</td>
                             <td>{cliente.profesor_id}</td>
                             <td>${cliente.deuda}</td>
                             <td>${cliente.cuota_mensual}</td>

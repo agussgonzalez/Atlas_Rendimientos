@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './Ingresos.css';
 
-const Ingresos = () => {
-    const [ingresos, setIngresos] = useState([]);
-
-    useEffect(() => {
-        axios.get('/api/ingresos')
-            .then(response => {
-                setIngresos(response.data);
-            })
-            .catch(error => {
-                console.error('Error al obtener ingresos:', error);
-            });
-    }, []);
-
+const Ingresos = ({ ingresos }) => {
     return (
         <div className="ingresos-container">
-            <h1>Ingresos</h1>
             <table>
                 <thead>
                     <tr>

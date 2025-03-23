@@ -10,7 +10,6 @@ const db = mysql.createConnection({
     connectionLimit: 10,
     queueLimit: 0
 });
-
 db.connect((err) => {
     if (err) {
         console.error('Error al conectar a MySQL:', err.stack);

@@ -1,23 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './Egresos.css';
 
-const Egresos = () => {
-    const [egresos, setEgresos] = useState([]);
-
-    useEffect(() => {
-        axios.get('/api/egresos')
-            .then(response => {
-                setEgresos(response.data);
-            })
-            .catch(error => {
-                console.error('Error al obtener egresos:', error);
-            });
-    }, []);
-
+const Egresos = ({ egresos }) => {
     return (
         <div className="egresos-container">
-            <h1>Egresos</h1>
             <table>
                 <thead>
                     <tr>
